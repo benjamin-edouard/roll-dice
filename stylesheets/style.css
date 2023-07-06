@@ -1,0 +1,126 @@
+
+/* Imported fonts : Lato Light 300 and Regular 400 */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+/* -------- HTML TAG STYLING -------- */
+body {
+    background-image: url('../includes/images/background-dice.jpg');
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin: 0 auto;
+    width: 100%;
+}
+
+main {
+    background-color: rgb(197, 197, 197);
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    margin: auto;
+    width: 80%;
+    height: 90vh;
+}
+
+h1,
+h2 {
+    font-family: inherit;
+    font-weight: 300;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    cursor: pointer;
+}
+
+h1 img {
+    margin-right: 1rem;
+    width: 30px;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+}
+
+/* -------- PLAYERS SECTIONS -------- */
+section.players-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+article.player-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article.player-one,
+article.player-two {
+    font-family: inherit;
+    font-weight: 300;
+    width: 50%;
+    height: 81vh;
+}
+
+article.player-one {
+    background-color: rgb(191, 171, 173);
+}
+
+article.player-two {
+    background-color: rgb(200, 187, 178);
+}
+
+div.global-score {
+    color: rgb(126, 10, 10);
+    font-family: inherit;
+    font-size: 5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+div.round-score {
+    background-color: rgb(156, 44, 44);
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    margin-top: 15rem;
+    text-align: center;
+    width: fit-content;
+}
+
+div.round-score span {
+    font-size: 2.5rem;
+}
+
+/* -------- CENTRAL DICE AREA -------- */
+
+article.dice-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 12rem;
+}
+
+article.dice-area img.dice-img {
+    width: 120px;
+}
+
+article.dice-area h2:first-of-type {
+    margin-top: 15rem;
+}
+
+article.dice-area h2 {
+    font-size: 1.6rem;
+    padding: 1rem;
+    margin:1rem;
+}
+
+article.dice-area img {
+    margin-right: 1rem;
+    width: 20px;
+}
