@@ -12,7 +12,7 @@
 <body>
 
     <main class="container">
-        <h1>
+        <h1 id="new-game">
             <img src="includes/icons/plus.png" alt="new game plus icon">
             NEW GAME
         </h1>
@@ -21,21 +21,21 @@
 
             <!-- PLAYER ONE BOARD -->
             <article class="player-board player-one" id="player-one">
-                <h2>PLAYER 1</h2>
+                <h2 class="actual-player">PLAYER 1</h2>
 
                 <div class="global-score" id="player-one-global-score">43</div>
 
-                <div class="round-score" id="player-one-round-score">
+                <div class="round-score">
                     <h3>CURRENT</h3>
-                    <span>11</span>
+                    <span id="player-one-round-score">11</span>
                 </div>
             </article>
 
             <article class="dice-area" id="dice-area">
                 <img src="includes/images/dice/dice-five.png" class="dice-img" alt="dice for the game">
 
-                <h2>ROLL DICE</h2>
-                <h2>
+                <h2 id="roll-dice">ROLL DICE</h2>
+                <h2 id="hold-score">
                     <img src="includes/icons/hold.png" alt="roll dice icon">
                     HOLD
                 </h2>
@@ -43,18 +43,19 @@
 
             <!-- PLAYER TWO BOARD -->
             <article class="player-board player-two" id="player-two">
-                <h2>PLAYER 2</h2>
+                <h2 class="actual-player">PLAYER 2</h2>
 
                 <div class="global-score" id="player-two-global-score">72</div>
 
-                <div class="round-score" id="player-two-round-score">
+                <div class="round-score">
                     <h3>CURRENT</h3>
-                    <span>0</span>
+                    <span id="player-two-round-score">9</span>
                 </div>
             </article>
         </section>
     </main>
-
+    <noscript>Merci de bien vouloir activer Javascript dans les paramètres de votre navigateur afin de profiter d'une expérience maximale du jeu</noscript>
+<script src="js/roll-dice.js"></script>
 </body>
 
 </html>
