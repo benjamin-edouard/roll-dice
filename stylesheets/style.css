@@ -52,6 +52,12 @@ section.players-section {
     justify-content: space-around;
 }
 
+h2.active-player:after {
+    content: '\2022';
+    color: rgb(126, 10, 10);
+    margin-left: 1rem;
+}
+
 article.player-board {
     display: flex;
     flex-direction: column;
@@ -86,7 +92,7 @@ div.round-score {
     background-color: rgb(156, 44, 44);
     color: rgb(255, 255, 255);
     padding: 1rem;
-    margin-top: 15rem;
+    margin-top: 15vh;
     text-align: center;
     width: fit-content;
 }
@@ -110,7 +116,7 @@ article.dice-area img.dice-img {
 }
 
 article.dice-area h2:first-of-type {
-    margin-top: 15rem;
+    margin-top: 15vh;
 }
 
 article.dice-area h2 {
