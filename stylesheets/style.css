@@ -21,14 +21,11 @@ main {
 
 h1,
 h2 {
+    cursor: pointer;
     font-family: inherit;
     font-weight: 300;
     padding: 2rem;
     text-align: center;
-}
-
-h1 {
-    cursor: pointer;
 }
 
 h1 img {
