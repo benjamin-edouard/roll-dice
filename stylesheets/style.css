@@ -16,7 +16,7 @@ main {
     box-shadow: 0px 0px 15px rgb(0, 0, 0);
     margin: auto;
     width: 80%;
-    height: 90vh;
+    height: 85vh;
 }
 
 h1,
@@ -49,8 +49,9 @@ svg {
 }
 
 svg.rotate {
-    animation-duration:15s;
+    animation-duration: 15s;
 }
+
 /* -------- PLAYERS SECTIONS -------- */
 section.players-section {
     display: flex;
@@ -75,7 +76,7 @@ article.player-two {
     font-family: inherit;
     font-weight: 300;
     width: 50%;
-    height: 81vh;
+    height: 76vh;
 }
 
 article.player-one {
@@ -98,7 +99,7 @@ div.round-score {
     background-color: rgb(156, 44, 44);
     color: rgb(255, 255, 255);
     padding: 1rem;
-    margin-top: 15vh;
+    margin-top: 10vh;
     text-align: center;
     width: fit-content;
 }
@@ -122,7 +123,7 @@ article.dice-area img.dice-img {
 }
 
 article.dice-area h2:first-of-type {
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 article.dice-area h2 {
