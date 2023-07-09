@@ -59,25 +59,22 @@ rollDice.addEventListener("click", () => {
     dice.set(5, '<img src="../includes/images/dice/dice-five.png" class="dice-img" alt="dice five image">')
     dice.set(6, '<img src="../includes/images/dice/dice-six.png" class="dice-img" alt="dice six image">')
 
-    function rollDice(max) {
-        let diceNumber = Math.floor(Math.random() * max)
+    let throwDice = () => {
+        let diceNumber = Math.floor(Math.random() * 7)
         if (diceNumber === 0) {
-            rollDice(7)
+            throwDice()
         } else {
-            return diceNumber
+            throwDiceArea.innerHTML = dice.get(diceNumber)
+            if(actualPlayer === '0') {
+                alert(`Veuillez sélectionner un joueur !`)
+            } else if(actualPlayer === '1') {
+                playerOneRoundScore.innerText = Number(playerOneRoundScore.innerText) + diceNumber
+            } else if(actualPlayer === '2') {
+                playerTwoRoundScore.innerText = Number(playerTwoRoundScore.innerText) + diceNumber
+            }
         }
-    }
-
-    let throwDice = rollDice(7)
-    throwDiceArea.innerHTML = dice.get(throwDice)
-
-    if(actualPlayer === '0') {
-        alert(`Veuillez sélectionner un joueur !`)
-    } else if(actualPlayer === '1') {
-        playerOneRoundScore.innerText = Number(playerOneRoundScore.innerText) + throwDice
-    } else if(actualPlayer === '2') {
-        playerTwoRoundScore.innerText = Number(playerTwoRoundScore.innerText) + throwDice
-    }
+    } 
+    throwDice()
 })
 
 // HOLD SCORE -------------------------------------------------------------------
