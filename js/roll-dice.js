@@ -49,31 +49,53 @@ players[1].addEventListener("click", () => {
 
 // ROLL DICE
 rollDice.addEventListener("click", () => {
+
+    let dice = new Map();
+    dice.set(1, 'one')
+    dice.set(2, 'two')
+    dice.set(3, 'three')
+    dice.set(4, 'four')
+    dice.set(5, 'five')
+    dice.set(6, 'six')
+
     function rollDice(max) {
         let diceNumber = Math.floor(Math.random() * max);
         if (diceNumber === 0) {
-            rollDice(6);
+            rollDice(7);
         } else {
             console.log(diceNumber);
             return diceNumber;
         }
     }
-    rollDice(6);
+
+    let throwDice = rollDice(7)
+
+    if(dice.get(throwDice) === 'undefined') {
+        throwDice = rollDice(7)
+    } else {
+        console.log(`Throw dice : ${throwDice}`)
+        console.log(dice.get(throwDice))
+    }
+
+
+    if(actualPlayer === '0') {
+        alert(`Veuillez sélectionner un joueur !`);
+    } else if(actualPlayer === '1') {
+        playerOneRoundScore.innerText = Number(playerOneRoundScore.innerText) + throwDice
+    } else if(actualPlayer === '2') {
+        playerTwoRoundScore.innerText = Number(playerTwoRoundScore.innerText) + throwDice
+    }
 });
 
 // HOLD SCORE
 holdScore.addEventListener("click", () => {
-    if (actualPlayer === "0") {
+    if (actualPlayer === '0') {
         alert(`Veuillez sélectionner un joueur !`);
-    } else if (actualPlayer === "1") {
-        playerOneGlobalScore.innerHTML =
-            Number(playerOneRoundScore.innerText) +
-            Number(playerOneGlobalScore.innerText);
+    } else if (actualPlayer === '1') {
+        playerOneGlobalScore.innerHTML = Number(playerOneRoundScore.innerText) + Number(playerOneGlobalScore.innerText);
         playerOneRoundScore.innerHTML = 0;
-    } else if (actualPlayer === "2") {
-        playerTwoGlobalScore.innerHTML =
-            Number(playerTwoRoundScore.innerText) +
-            Number(playerTwoGlobalScore.innerText);
+    } else if (actualPlayer === '2') {
+        playerTwoGlobalScore.innerHTML = Number(playerTwoRoundScore.innerText) + Number(playerTwoGlobalScore.innerText);
         playerTwoRoundScore.innerHTML = 0;
     }
 });
