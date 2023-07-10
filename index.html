@@ -28,43 +28,52 @@
             <article class="player-board player-one" id="player-one">
                 <h2 class="actual-player">PLAYER 1</h2>
 
-                <div class="global-score" id="player-one-global-score">0</div>
+                <div class="players-scores">
+                    <div class="global-score" id="player-one-global-score">0</div>
 
-                <div class="round-score">
-                    <h3>CURRENT</h3>
-                    <span id="player-one-round-score">0</span>
+                    <div class="round-score">
+                        <h3>CURRENT</h3>
+                        <span id="player-one-round-score">0</span>
+                    </div>
                 </div>
-            </article>
 
-            <article class="dice-area" id="dice-area">
-                <span id="throw-dice-area">
-                    <img src="includes/images/dice/dice-five.png" class="dice-img" alt="dice for the game">
-                </span>
-
-                <h2 id="roll-dice">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-clockwise rotate" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-                    </svg>
-                    ROLL DICE</h2>
-
-                <h2 id="hold-score">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
-                        <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
-                    </svg>
-                    HOLD
-                </h2>
             </article>
 
             <!-- PLAYER TWO BOARD -->
             <article class="player-board player-two" id="player-two">
                 <h2 class="actual-player">PLAYER 2</h2>
 
-                <div class="global-score" id="player-two-global-score">0</div>
+                <div class="players-scores">
+                    <div class="global-score" id="player-two-global-score">0</div>
 
-                <div class="round-score">
-                    <h3>CURRENT</h3>
-                    <span id="player-two-round-score">0</span>
+                    <div class="round-score">
+                        <h3>CURRENT</h3>
+                        <span id="player-two-round-score">0</span>
+                    </div>
+                </div>
+                
+            </article>
+
+            <!-- DICE AREA -->
+            <article class="dice-area" id="dice-area">
+                <span id="throw-dice-area">
+                    <img src="includes/images/dice/dice-five.png" class="dice-img" alt="dice for the game">
+                </span>
+
+                <div class="game-commands">
+                    <h2 id="roll-dice">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-clockwise rotate" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                        </svg>
+                        ROLL DICE</h2>
+
+                    <h2 id="hold-score">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+                        </svg>
+                        HOLD
+                    </h2>
                 </div>
             </article>
         </section>
