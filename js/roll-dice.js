@@ -34,7 +34,7 @@ newGame.addEventListener('click', () => {
 
 // DEFINES THE ACTUAL PLAYER -------------------------------------------------------------------
 
-// This defines the actual player by clicking on the H1 element
+// This defines the actual player by clicking on the H2 html tag
 players[0].addEventListener('click', () => {
     actualPlayer = players[0].innerText.substring(7, 8)
     definePlayer(actualPlayer)
@@ -60,7 +60,7 @@ function definePlayer(player) {
 }
 
 // ROLL DICE -------------------------------------------------------------------
-rollDice.addEventListener('click', () => {
+rollDice.addEventListener('click', function() {
 
     let dice = new Map()
     dice.set(1, '<img src="../includes/images/dice/dice-one.png" class="dice-img" alt="dice one image">')
@@ -71,14 +71,21 @@ rollDice.addEventListener('click', () => {
     dice.set(6, '<img src="../includes/images/dice/dice-six.png" class="dice-img" alt="dice six image">')
 
     let throwDice = () => {
+
+        // Returns random number between 0 and 6
         let diceNumber = Math.floor(Math.random() * 7)
+        
+        // If 0 throm the dice again
         if (diceNumber === 0) {
             throwDice()
         } else {
             throwDiceArea.innerHTML = dice.get(diceNumber)
 
+            // Checks if a player is selected
             if (actualPlayer === '0') {
                 alert(`Veuillez sélectionner un joueur !`)
+
+            // Player one turn    
             } else if (actualPlayer === '1') {
                 if (diceNumber != 1) {
                     playerOneRoundScore.innerText = Number(playerOneRoundScore.innerText) + diceNumber
@@ -86,6 +93,7 @@ rollDice.addEventListener('click', () => {
                     playerOneRoundScore.innerText = 0
                     definePlayer('2')
                 }
+            // Player two turn
             } else if (actualPlayer === '2') {
                 if (diceNumber != 1) {
                     playerTwoRoundScore.innerText = Number(playerTwoRoundScore.innerText) + diceNumber
@@ -106,10 +114,19 @@ holdScore.addEventListener('click', () => {
     } else if (actualPlayer === '1') {
         playerOneGlobalScore.innerHTML = Number(playerOneRoundScore.innerText) + Number(playerOneGlobalScore.innerText)
         playerOneRoundScore.innerHTML = 0
-        definePlayer('2')
+        if(Number(playerOneGlobalScore.innerText) >= 100) {
+            alert('Le jouer 1 est le grand gagnant de cette partie')
+            rollDice.removeEventListener('click')
+        }  else {
+            definePlayer('2')
+        }
     } else if (actualPlayer === '2') {
         playerTwoGlobalScore.innerHTML = Number(playerTwoRoundScore.innerText) + Number(playerTwoGlobalScore.innerText)
         playerTwoRoundScore.innerHTML = 0
-        definePlayer('1')
+        if(Number(playerTwoGlobalScore.innerText) >= 100) {
+            alert('Le joueur 2 est le grand gagnant de cette partie')
+        } else {
+            definePlayer('1')
+        }
     }
 })
