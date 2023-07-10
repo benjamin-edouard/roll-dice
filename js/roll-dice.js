@@ -29,21 +29,16 @@ newGame.addEventListener('click', () => {
         playerOneRoundScore.innerHTML = 0
         playerTwoGlobalScore.innerHTML = 0
         playerTwoRoundScore.innerHTML = 0
+
+        rollDice.addEventListener('click', throwDiceAction)
+        holdScore.addEventListener('click', holdScoreAction)
+
+        holdScore.style.cursor = 'pointer'
+        rollDice.style.cursor = 'pointer'
     }
 })
 
 // DEFINES THE ACTUAL PLAYER -------------------------------------------------------------------
-
-/* // This defines the actual player by clicking on the H2 html tag
-players[0].addEventListener('click', () => {
-    actualPlayer = players[0].innerText.substring(7, 8)
-    definePlayer(actualPlayer)
-})
-
-players[1].addEventListener('click', () => {
-    actualPlayer = players[1].innerText.substring(7, 8)
-    definePlayer(actualPlayer)
-}) */
 
 // This function is called elsewhere in the program to define the player
 function definePlayer(player) {
@@ -60,8 +55,8 @@ function definePlayer(player) {
 }
 
 // ROLL DICE -------------------------------------------------------------------
-rollDice.addEventListener('click', function() {
 
+function throwDiceAction() {
     let dice = new Map()
     dice.set(1, '<img src="includes/images/dice/dice-one.png" class="dice-img" alt="dice one image">')
     dice.set(2, '<img src="includes/images/dice/dice-two.png" class="dice-img" alt="dice two image">')
@@ -81,54 +76,76 @@ rollDice.addEventListener('click', function() {
         } else {
             throwDiceArea.innerHTML = dice.get(diceNumber)
 
-            // Checks if a player is selected
-            if (actualPlayer === '0') {
-                alert(`Veuillez sélectionner un joueur !`)
-
             // Player one turn    
-            } else if (actualPlayer === '1') {
+            if (actualPlayer === '1') {
                 if (diceNumber != 1) {
                     playerOneRoundScore.innerText = Number(playerOneRoundScore.innerText) + diceNumber
+                    holdScore.addEventListener('click', holdScoreAction)
+                    holdScore.style.cursor = 'pointer'
                 } else {
                     playerOneRoundScore.innerText = 0
                     definePlayer('2')
-                    // Need to remove listener on the hold button until the dice is thrown again by the next player
+                    holdScore.removeEventListener('click', holdScoreAction)
+                    holdScore.style.cursor = 'not-allowed'
                 }
             // Player two turn
             } else if (actualPlayer === '2') {
                 if (diceNumber != 1) {
                     playerTwoRoundScore.innerText = Number(playerTwoRoundScore.innerText) + diceNumber
+                    holdScore.addEventListener('click', holdScoreAction)
+                    holdScore.style.cursor = 'pointer'
                 } else {
                     playerTwoRoundScore.innerText = 0
                     definePlayer('1')
-                    // Need to remove listener on the hold button until the dice is thrown again by the next player
+                    holdScore.removeEventListener('click', holdScoreAction)
+                    holdScore.style.cursor = 'not-allowed'
                 }
             }
         }
     } 
     throwDice()
-})
+}
+
+rollDice.addEventListener('click', throwDiceAction)
 
 // HOLD SCORE -------------------------------------------------------------------
-holdScore.addEventListener('click', () => {
-    if (actualPlayer === '0') {
-        alert(`Veuillez sélectionner un joueur !`)
-    } else if (actualPlayer === '1') {
+
+function holdScoreAction() {
+    if (actualPlayer === '1') {
         playerOneGlobalScore.innerHTML = Number(playerOneRoundScore.innerText) + Number(playerOneGlobalScore.innerText)
         playerOneRoundScore.innerHTML = 0
+
         if(Number(playerOneGlobalScore.innerText) >= 100) {
             alert('Le jouer 1 est le grand gagnant de cette partie')
-            //rollDice.removeEventListener('click')
+            
+            rollDice.removeEventListener('click', throwDiceAction)
+            holdScore.removeEventListener('click', holdScoreAction)
+
+            holdScore.style.cursor = 'not-allowed'
+            rollDice.style.cursor = 'not-allowed'
+
+            definePlayer('2')
         }  else {
             definePlayer('2')
         }
     } else if (actualPlayer === '2') {
         playerTwoGlobalScore.innerHTML = Number(playerTwoRoundScore.innerText) + Number(playerTwoGlobalScore.innerText)
         playerTwoRoundScore.innerHTML = 0
+
         if(Number(playerTwoGlobalScore.innerText) >= 100) {
             alert('Le joueur 2 est le grand gagnant de cette partie')
+
+            rollDice.removeEventListener('click', throwDiceAction)
+            holdScore.removeEventListener('click', holdScoreAction)
+
+            holdScore.style.cursor = 'not-allowed'
+            rollDice.style.cursor = 'not-allowed'
+            
+            definePlayer('1')
         } else {
             definePlayer('1')
         }
     }
-})
+}
+
+holdScore.addEventListener('click', holdScoreAction)

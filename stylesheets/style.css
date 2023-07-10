@@ -19,9 +19,12 @@ main {
     height: 85vh;
 }
 
+h1 {
+    cursor: pointer;
+}
+
 h1,
 h2 {
-    cursor: pointer;
     font-family: inherit;
     font-weight: 300;
     padding: 2rem;
