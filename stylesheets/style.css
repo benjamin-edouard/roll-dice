@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    background-color: rgb(197, 197, 197);
+    background-color: rgb(255, 251, 244);
     box-shadow: 0px 0px 15px rgb(0, 0, 0);
     margin: auto;
     width: 80%;
@@ -48,10 +48,10 @@ svg {
     margin-right: 1rem;
 }
 
-svg.rotate {
+/* svg.rotate {
     animation-duration: 15s;
 }
-
+ */
 /* -------- PLAYERS SECTIONS -------- */
 section.players-section {
     display: flex;
@@ -80,11 +80,11 @@ article.player-two {
 }
 
 article.player-one {
-    background-color: rgb(191, 171, 173);
+    background-color: rgb(168, 196, 189);
 }
 
 article.player-two {
-    background-color: rgb(200, 187, 178);
+    background-color: rgb(172, 184, 198);
 }
 
 div.global-score {
@@ -119,6 +119,8 @@ article.dice-area {
 }
 
 article.dice-area img.dice-img {
+    border-radius: 18px;
+    box-shadow: 0px 0px 13px rgb(0, 0, 0);
     width: 120px;
 }
 
@@ -136,4 +138,92 @@ article.dice-area h2 {
 article.dice-area img {
     margin-right: 1rem;
     width: 20px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    body {
+        background: none;
+        margin: 0;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    main {
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        height: 100vh;
+        width: 100%;
+    }
+
+    section.players-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    div.players-scores {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    article.player-one,
+    article.player-two {
+        height: 30vh;
+        width: 100%;
+    }
+
+    div.round-score {
+        margin-top: unset;
+    }
+
+    div.global-score {
+        font-size: 4rem;
+    }
+
+    article.dice-area {
+        background-color: rgb(226, 167, 167);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: unset;
+        position: unset; /* Disabled the time to sort out the players area */
+    }
+
+    article.dice-area img.dice-img {
+        width: 80px;
+    }
+
+    div.game-commands {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article.dice-area h2 {
+        font-size: 1.3rem;
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    article.dice-area h2:first-of-type {
+        margin-top: unset;
+    }
+
 }
