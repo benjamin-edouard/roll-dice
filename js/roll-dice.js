@@ -63,12 +63,12 @@ function definePlayer(player) {
 rollDice.addEventListener('click', function() {
 
     let dice = new Map()
-    dice.set(1, '<img src="../includes/images/dice/dice-one.png" class="dice-img" alt="dice one image">')
-    dice.set(2, '<img src="../includes/images/dice/dice-two.png" class="dice-img" alt="dice two image">')
-    dice.set(3, '<img src="../includes/images/dice/dice-three.png" class="dice-img" alt="dice three image">')
-    dice.set(4, '<img src="../includes/images/dice/dice-four.png" class="dice-img" alt="dice four image">')
-    dice.set(5, '<img src="../includes/images/dice/dice-five.png" class="dice-img" alt="dice five image">')
-    dice.set(6, '<img src="../includes/images/dice/dice-six.png" class="dice-img" alt="dice six image">')
+    dice.set(1, '<img src="includes/images/dice/dice-one.png" class="dice-img" alt="dice one image">')
+    dice.set(2, '<img src="includes/images/dice/dice-two.png" class="dice-img" alt="dice two image">')
+    dice.set(3, '<img src="includes/images/dice/dice-three.png" class="dice-img" alt="dice three image">')
+    dice.set(4, '<img src="includes/images/dice/dice-four.png" class="dice-img" alt="dice four image">')
+    dice.set(5, '<img src="includes/images/dice/dice-five.png" class="dice-img" alt="dice five image">')
+    dice.set(6, '<img src="includes/images/dice/dice-six.png" class="dice-img" alt="dice six image">')
 
     let throwDice = () => {
 
