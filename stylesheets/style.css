@@ -191,6 +191,7 @@ article.dice-area img {
     }
 
     div.round-score {
+        padding: 0.5rem;
         margin-top: unset;
     }
 
