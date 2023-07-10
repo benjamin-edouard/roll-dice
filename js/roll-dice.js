@@ -6,7 +6,7 @@ const throwDiceArea = document.querySelector('#throw-dice-area')
 
 // Defines the actual player
 const players = document.querySelectorAll('h2.actual-player')
-let actualPlayer = '0'
+let actualPlayer = '1'
 
 // PLAYER ONE
 let playerOneGlobalScore = document.querySelector('div#player-one-global-score')
@@ -34,7 +34,7 @@ newGame.addEventListener('click', () => {
 
 // DEFINES THE ACTUAL PLAYER -------------------------------------------------------------------
 
-// This defines the actual player by clicking on the H2 html tag
+/* // This defines the actual player by clicking on the H2 html tag
 players[0].addEventListener('click', () => {
     actualPlayer = players[0].innerText.substring(7, 8)
     definePlayer(actualPlayer)
@@ -43,7 +43,7 @@ players[0].addEventListener('click', () => {
 players[1].addEventListener('click', () => {
     actualPlayer = players[1].innerText.substring(7, 8)
     definePlayer(actualPlayer)
-})
+}) */
 
 // This function is called elsewhere in the program to define the player
 function definePlayer(player) {
@@ -92,6 +92,7 @@ rollDice.addEventListener('click', function() {
                 } else {
                     playerOneRoundScore.innerText = 0
                     definePlayer('2')
+                    // Need to remove listener on the hold button until the dice is thrown again by the next player
                 }
             // Player two turn
             } else if (actualPlayer === '2') {
@@ -100,6 +101,7 @@ rollDice.addEventListener('click', function() {
                 } else {
                     playerTwoRoundScore.innerText = 0
                     definePlayer('1')
+                    // Need to remove listener on the hold button until the dice is thrown again by the next player
                 }
             }
         }
@@ -116,7 +118,7 @@ holdScore.addEventListener('click', () => {
         playerOneRoundScore.innerHTML = 0
         if(Number(playerOneGlobalScore.innerText) >= 100) {
             alert('Le jouer 1 est le grand gagnant de cette partie')
-            rollDice.removeEventListener('click')
+            //rollDice.removeEventListener('click')
         }  else {
             definePlayer('2')
         }
