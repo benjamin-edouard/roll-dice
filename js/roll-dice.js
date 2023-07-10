@@ -31,9 +31,8 @@ newGame.addEventListener('click', () => {
         playerTwoRoundScore.innerHTML = 0
 
         rollDice.addEventListener('click', throwDiceAction)
-        holdScore.addEventListener('click', holdScoreAction)
 
-        holdScore.style.cursor = 'pointer'
+        holdScore.style.cursor = 'not-allowed'
         rollDice.style.cursor = 'pointer'
     }
 })
@@ -140,7 +139,7 @@ function holdScoreAction() {
 
             holdScore.style.cursor = 'not-allowed'
             rollDice.style.cursor = 'not-allowed'
-            
+
             definePlayer('1')
         } else {
             definePlayer('1')
