@@ -50,6 +50,12 @@ function setPlayersName() {
     //Second player name
     let secondPlayerName = prompt(`Quel est la prénom du deuxième joueur ?`)
     playerTwoName.innerText = `(${secondPlayerName})`
+
+    // If the players don't set their names, then the div's are not displayed in the DOMBenjamin
+    if(firstPlayerName === null || secondPlayerName === null) {
+        playerOneName.style.display = 'none'
+        playerTwoName.style.display = 'none'
+    }
 }
 
 // DEFINES THE ACTUAL PLAYER -------------------------------------------------------------------
@@ -165,3 +171,6 @@ function holdScoreAction() {
 }
 
 holdScore.addEventListener('click', holdScoreAction)
+
+//  Ask for the players name after the page is loaded
+setPlayersName()
