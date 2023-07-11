@@ -45,16 +45,25 @@ newGame.addEventListener('click', () => {
 function setPlayersName() {
     // First player name
     let firstPlayerName = prompt(`Quel est le prénom du premier joueur ?`)
-    playerOneName.innerText = `(${firstPlayerName})`
+    if(firstPlayerName !== null) {
+        let capitalizedFirstPlayerName = firstPlayerName.charAt(0).toUpperCase() + firstPlayerName.slice(1).toLowerCase()
+        playerOneName.innerText = `(${capitalizedFirstPlayerName})`
+    }
     
     //Second player name
     let secondPlayerName = prompt(`Quel est la prénom du deuxième joueur ?`)
-    playerTwoName.innerText = `(${secondPlayerName})`
+    if(secondPlayerName !== null) {
+        let capitalizedSecondPlayerName = secondPlayerName.charAt(0).toUpperCase() + secondPlayerName.slice(1).toLowerCase()
+        playerTwoName.innerText = `(${capitalizedSecondPlayerName})`
+    }
 
     // If the players don't set their names, then the div's are not displayed in the DOMBenjamin
     if(firstPlayerName === null || secondPlayerName === null) {
         playerOneName.style.display = 'none'
         playerTwoName.style.display = 'none'
+
+        players[0].style.marginBottom = '2rem'
+        players[1].style.marginBottom = '2rem'
     }
 }
 
